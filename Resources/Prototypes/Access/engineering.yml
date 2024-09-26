@@ -2,6 +2,10 @@
   id: ChiefEngineer
   name: id-card-access-level-chief-engineer
 
+  type: accessLevel
+  id: SeniorEngineer
+  name: id-card-access-level-senior-engineer
+
 - type: accessLevel
   id: Engineering
   name: id-card-access-level-engineering
