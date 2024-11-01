@@ -1,19 +1,9 @@
 - type: soundCollection
   id: LobbyMusic
   files:
-    - /Audio/Lobby/a_different_reality_lagoona_remix.xm.ogg
-    - /Audio/Lobby/aggravated.it.ogg
-    #- /Audio/Lobby/autumnal_equinox.xm.ogg
-    - /Audio/Lobby/comet_haley.ogg
-    #- /Audio/Lobby/drozerix_-_leisurely_voice.xm.ogg
-    #- /Audio/Lobby/endless_space.ogg
-    - /Audio/Lobby/marhaba.ogg
-    - /Audio/Lobby/melcom-cyberpunk.it.ogg
-    - /Audio/Lobby/midori_-_conundrum_final.it.ogg
-    #- /Audio/Lobby/mod.flip-flap.ogg
-    - /Audio/Lobby/superposition.ogg
-    - /Audio/Lobby/hackers.ogg
-    #- /Audio/Lobby/every_light_is_blinking_at_once.ogg
-    - /Audio/Lobby/Infinite_Realm_of_Incomprehensible_Suffering.ogg
-    - /Audio/Lobby/Cute_Circus.ogg
-    - /Audio/Lobby/tf_music_upgrade_machine.ogg
+    - /Audio/Lobby/bump_in_the_night.ogg
+    - /Audio/Lobby/carousel_of_curses.ogg
+    - /Audio/Lobby/death_is_a_carousel.ogg
+    - /Audio/Lobby/halloween_01.ogg
+    - /Audio/Lobby/misfortune_teller.ogg
+    - /Audio/Lobby/the_vampire_masquerade_waltz.ogg
