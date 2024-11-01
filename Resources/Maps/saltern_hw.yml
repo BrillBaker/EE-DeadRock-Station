@@ -50771,30 +50771,6 @@ entities:
     - type: Transform
       pos: -23.22659,-5.552586
       parent: 31
-- proto: GunSafeC20
-  entities:
-  - uid: 2132
-    components:
-    - type: Transform
-      pos: -14.5,19.5
-      parent: 31
-  - uid: 7687
-    components:
-    - type: Transform
-      pos: -14.5,21.5
-      parent: 31
-- proto: GunSafePistolViper
-  entities:
-  - uid: 4234
-    components:
-    - type: Transform
-      pos: -14.5,20.5
-      parent: 31
-  - uid: 11818
-    components:
-    - type: Transform
-      pos: -13.5,21.5
-      parent: 31
 - proto: Handcuffs
   entities:
   - uid: 8723
