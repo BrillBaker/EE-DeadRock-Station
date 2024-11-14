@@ -6354,7 +6354,6 @@ entities:
       solutions:
         beaker:
           temperature: 293.15
-          canMix: True
           canReact: True
           maxVol: 50
           name: null
@@ -6880,6 +6879,11 @@ entities:
       parent: 31
 - proto: BoxBeanbag
   entities:
+  - uid: 1206
+    components:
+    - type: Transform
+      pos: -13.374279,18.592438
+      parent: 31
   - uid: 2222
     components:
     - type: Transform
@@ -6887,11 +6891,6 @@ entities:
       parent: 31
     - type: BallisticAmmoProvider
       unspawnedCount: 12
-  - uid: 11280
-    components:
-    - type: Transform
-      pos: -11.305756,18.242832
-      parent: 31
 - proto: BoxBodyBag
   entities:
   - uid: 10548
@@ -7108,13 +7107,6 @@ entities:
     components:
     - type: Transform
       pos: 13.942519,-15.320015
-      parent: 31
-- proto: BoxLethalshot
-  entities:
-  - uid: 11281
-    components:
-    - type: Transform
-      pos: -11.600906,18.242832
       parent: 31
 - proto: BoxLightMixed
   entities:
@@ -28374,42 +28366,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterArmorBasic
-  entities:
-  - uid: 1206
-    components:
-    - type: Transform
-      pos: -11.694116,19.672714
-      parent: 31
-  - uid: 9622
-    components:
-    - type: Transform
-      pos: -11.490991,19.672714
-      parent: 31
-- proto: ClothingOuterArmorBulletproof
-  entities:
-  - uid: 36
-    components:
-    - type: Transform
-      pos: -11.170591,19.266254
-      parent: 31
-  - uid: 42
-    components:
-    - type: Transform
-      pos: -11.436216,19.297504
-      parent: 31
-  - uid: 43
-    components:
-    - type: Transform
-      pos: -11.733091,19.297504
-      parent: 31
-- proto: ClothingOuterArmorReflective
-  entities:
-  - uid: 8020
-    components:
-    - type: Transform
-      pos: -11.209741,19.672714
-      parent: 31
 - proto: ClothingOuterCoatInspector
   entities:
   - uid: 7480
@@ -30098,6 +30054,13 @@ entities:
     - type: Transform
       pos: -17.5,-8.5
       parent: 31
+- proto: CrateEmergencyExplosive
+  entities:
+  - uid: 42
+    components:
+    - type: Transform
+      pos: -11.5,18.5
+      parent: 31
 - proto: CrateEmptySpawner
   entities:
   - uid: 3135
@@ -30329,6 +30292,13 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: CrateSecurityRiot
+  entities:
+  - uid: 36
+    components:
+    - type: Transform
+      pos: -11.5,19.5
+      parent: 31
 - proto: CrateTrashCart
   entities:
   - uid: 4318
@@ -34379,8 +34349,8 @@ entities:
       pos: 14.5,-4.5
       parent: 31
     - type: FaxMachine
-      destinationAddress: Medical
       name: Medical
+      destinationAddress: Medical
   - uid: 1264
     components:
     - type: Transform
@@ -34394,8 +34364,8 @@ entities:
       pos: -17.5,-25.5
       parent: 31
     - type: FaxMachine
-      destinationAddress: Science
       name: Science
+      destinationAddress: Science
   - uid: 8323
     components:
     - type: Transform
@@ -34409,8 +34379,8 @@ entities:
       pos: 13.5,12.5
       parent: 31
     - type: FaxMachine
-      destinationAddress: Cargo
       name: Cargo
+      destinationAddress: Cargo
   - uid: 9687
     components:
     - type: Transform
@@ -34424,8 +34394,8 @@ entities:
       pos: 1.5,32.5
       parent: 31
     - type: FaxMachine
-      destinationAddress: bridge
       name: bridge
+      destinationAddress: bridge
 - proto: FaxMachineCaptain
   entities:
   - uid: 9686
@@ -34844,7 +34814,7 @@ entities:
       pos: 38.5,-5.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -39475.17
+      secondsUntilStateChange: -40161.867
       state: Closing
   - uid: 4019
     components:
@@ -50771,6 +50741,34 @@ entities:
     - type: Transform
       pos: -23.22659,-5.552586
       parent: 31
+- proto: GunSafePistolUniversal
+  entities:
+  - uid: 8754
+    components:
+    - type: Transform
+      pos: -14.5,19.5
+      parent: 31
+- proto: GunSafeShotgunKammerer
+  entities:
+  - uid: 8020
+    components:
+    - type: Transform
+      pos: -13.5,21.5
+      parent: 31
+- proto: GunSafeSubMachineGunDrozd
+  entities:
+  - uid: 9622
+    components:
+    - type: Transform
+      pos: -14.5,20.5
+      parent: 31
+- proto: GunSafeVulcanRifle
+  entities:
+  - uid: 8753
+    components:
+    - type: Transform
+      pos: -14.5,21.5
+      parent: 31
 - proto: Handcuffs
   entities:
   - uid: 8723
@@ -51040,7 +51038,7 @@ entities:
       pos: 8.5,-7.5
       parent: 31
     - type: Door
-      secondsUntilStateChange: -20992.246
+      secondsUntilStateChange: -21678.943
       state: Closing
   - uid: 11697
     components:
@@ -51533,13 +51531,6 @@ entities:
     components:
     - type: Transform
       pos: 29.511814,16.65632
-      parent: 31
-- proto: JetpackSecurityFilled
-  entities:
-  - uid: 1121
-    components:
-    - type: Transform
-      pos: -11.571391,18.68531
       parent: 31
 - proto: KalimbaInstrument
   entities:
@@ -52089,7 +52080,7 @@ entities:
       parent: 31
 - proto: LockerHeadOfSecurityFilledHardsuit
   entities:
-  - uid: 4046
+  - uid: 43
     components:
     - type: Transform
       pos: -9.5,22.5
@@ -52311,17 +52302,17 @@ entities:
     - type: Transform
       pos: -3.5,-43.5
       parent: 31
-- proto: MagazinePistolSubMachineGun
+- proto: MagazinePistolSubMachineGunTopMounted
   entities:
-  - uid: 8753
+  - uid: 1121
     components:
     - type: Transform
-      pos: -7.861059,20.63175
+      pos: -7.957432,20.82782
       parent: 31
-  - uid: 8754
+  - uid: 7687
     components:
     - type: Transform
-      pos: -7.970434,20.553625
+      pos: -7.926182,20.655945
       parent: 31
 - proto: MaintenanceFluffSpawner
   entities:
@@ -52861,7 +52852,7 @@ entities:
     - type: Transform
       pos: -31.5,17.5
       parent: 31
-- proto: Oracle
+- proto: OracleSpawner
   entities:
   - uid: 9748
     components:
@@ -55880,11 +55871,6 @@ entities:
     - type: Transform
       pos: 43.5,13.5
       parent: 31
-  - uid: 2133
-    components:
-    - type: Transform
-      pos: -11.5,18.5
-      parent: 31
   - uid: 2827
     components:
     - type: Transform
@@ -58839,10 +58825,20 @@ entities:
     - type: Transform
       pos: 18.507324,7.4999294
       parent: 31
+  - uid: 4046
+    components:
+    - type: Transform
+      pos: -13.671154,18.420563
+      parent: 31
   - uid: 4214
     components:
     - type: Transform
       pos: 49.79525,5.541127
+      parent: 31
+  - uid: 4234
+    components:
+    - type: Transform
+      pos: -13.671154,18.420563
       parent: 31
   - uid: 5029
     components:
@@ -60711,7 +60707,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 31.5,-19.5
       parent: 31
-- proto: SophicScribe
+- proto: SophicScribeSpawner
   entities:
   - uid: 9370
     components:
@@ -62225,17 +62221,17 @@ entities:
     - type: Transform
       pos: -13.5,11.5
       parent: 31
-- proto: SuitStorageSyndie
+- proto: SuitStorageSec
   entities:
-  - uid: 9729
-    components:
-    - type: Transform
-      pos: -11.5,21.5
-      parent: 31
-  - uid: 9731
+  - uid: 2132
     components:
     - type: Transform
       pos: -12.5,21.5
+      parent: 31
+  - uid: 2133
+    components:
+    - type: Transform
+      pos: -11.5,21.5
       parent: 31
 - proto: SurveillanceCameraCommand
   entities:
@@ -63979,11 +63975,6 @@ entities:
     - type: Transform
       pos: 16.5,-6.5
       parent: 31
-  - uid: 9623
-    components:
-    - type: Transform
-      pos: -11.5,19.5
-      parent: 31
   - uid: 10892
     components:
     - type: Transform
@@ -64684,13 +64675,6 @@ entities:
     components:
     - type: Transform
       pos: -30.5,13.5
-      parent: 31
-- proto: TrainingBomb
-  entities:
-  - uid: 631
-    components:
-    - type: Transform
-      pos: -13.5,20.5
       parent: 31
 - proto: TrashBananaPeel
   entities:
@@ -73650,18 +73634,6 @@ entities:
     - type: Transform
       pos: -1.546499,25.649715
       parent: 31
-- proto: WeaponShotgunEnforcer
-  entities:
-  - uid: 11474
-    components:
-    - type: Transform
-      pos: -13.375815,18.314774
-      parent: 31
-  - uid: 11475
-    components:
-    - type: Transform
-      pos: -13.375815,18.658524
-      parent: 31
 - proto: WeaponShotgunImprovised
   entities:
   - uid: 11516
@@ -73669,12 +73641,12 @@ entities:
     - type: Transform
       pos: 41.306747,-6.2234173
       parent: 31
-- proto: WeaponSubMachineGunC20r
+- proto: WeaponSubMachineGunWt550HoS
   entities:
-  - uid: 11477
+  - uid: 631
     components:
     - type: Transform
-      pos: -8.517309,20.709875
+      pos: -8.441807,20.67157
       parent: 31
 - proto: Welder
   entities:
