@@ -5,7 +5,5 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ScottishAccent
+  components:
+    - type: ScottishAccent

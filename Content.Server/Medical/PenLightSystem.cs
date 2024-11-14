@@ -99,10 +99,11 @@ public sealed class PenLightSystem : EntitySystem
     }
     private void OpenUserInterface(EntityUid user, EntityUid penlight)
     {
-        if (!_uiSystem.HasUi(penlight, PenLightUiKey.Key))
+        if (!TryComp<ActorComponent>(user, out var actor)
+            || !_uiSystem.TryGetOpenUi(penlight, PenLightUiKey.Key, out var ui))
             return;
 
-        _uiSystem.OpenUi(penlight, PenLightUiKey.Key, user);
+        _uiSystem.OpenUi(ui.Owner, ui.UiKey, actor.PlayerSession);
     }
 
     /// <summary>
@@ -110,7 +111,7 @@ public sealed class PenLightSystem : EntitySystem
     /// </summary>
     private void Diagnose(EntityUid penlight, EntityUid target)
     {
-        if (!_uiSystem.HasUi(penlight, PenLightUiKey.Key)
+        if (!_uiSystem.TryGetOpenUi(penlight, PenLightUiKey.Key, out var ui)
             || !HasComp<EyeComponent>(target)
             || !HasComp<DamageableComponent>(target))
             return;
@@ -135,8 +136,8 @@ public sealed class PenLightSystem : EntitySystem
         var healthy = !(blind || drunk || eyeDamage || seeingRainbows);
 
         _uiSystem.ServerSendUiMessage(
-            penlight,
-            PenLightUiKey.Key,
+            ui.Owner,
+            ui.UiKey,
             new PenLightUserMessage(GetNetEntity(target),
                 blind,
                 drunk,

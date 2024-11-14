@@ -17,11 +17,9 @@
       species:
         - Dwarf
         - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: LightweightDrunk
-          boozeStrengthMultiplier: 2
+  components:
+    - type: LightweightDrunk
+      boozeStrengthMultiplier: 2
 
 - type: trait
   id: Stutter
@@ -34,14 +32,12 @@
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: StutteringAccent
-          matchRandomProb: 0.1
-          fourRandomProb: 0
-          threeRandomProb: 0
-          cutRandomProb: 0
+  components:
+    - type: StutteringAccent
+      matchRandomProb: 0.1
+      fourRandomProb: 0
+      threeRandomProb: 0
+      cutRandomProb: 0
 
 - type: trait
   id: ForeignerLight
@@ -52,12 +48,10 @@
       inverted: true
       traits:
         - Foreigner
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ForeignerTrait
-          cantUnderstand: false
-          baseTranslator: TranslatorForeigner
+  components:
+    - type: ForeignerTrait
+      cantUnderstand: false # Allows to understand
+      baseTranslator: TranslatorForeigner
 
 - type: trait
   id: Foreigner
@@ -68,8 +62,6 @@
       inverted: true
       traits:
         - ForeignerLight
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ForeignerTrait
-          baseTranslator: TranslatorForeigner
+  components:
+    - type: ForeignerTrait
+      baseTranslator: TranslatorForeigner

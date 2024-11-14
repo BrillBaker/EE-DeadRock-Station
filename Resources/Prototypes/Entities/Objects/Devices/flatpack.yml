@@ -3,7 +3,8 @@
   id: BaseFlatpack
   name: base flatpack
   description: A flatpack used for constructing something.
-  categories: [ HideSpawnMenu ]
+  categories:
+  - hideSpawnMenu
   components:
   - type: Item
     size: Large

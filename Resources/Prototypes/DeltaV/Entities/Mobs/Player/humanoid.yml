@@ -10,8 +10,6 @@
 
 - type: randomHumanoidSettings
   id: SyndicateListener
-  speciesBlacklist:
-    - Shadowkin
   components:
     - type: Loadout
       prototypes: [SyndicateListenerGear]
@@ -36,8 +34,6 @@
 - type: randomHumanoidSettings
   id: Mobster
   randomizeName: false
-  speciesBlacklist:
-    - Shadowkin
   components:
     - type: GhostRole
       name: Mobster
@@ -69,8 +65,6 @@
 - type: randomHumanoidSettings
   id: MobsterAlt
   randomizeName: false
-  speciesBlacklist:
-    - Shadowkin
   components:
     - type: GhostRole
       name: Mobster

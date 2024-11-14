@@ -82,16 +82,8 @@
 - type: entity
   name: Deckard
   parent: WeaponRevolverDeckard
-  id: WeaponRevolverDeckardSecurity
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
-               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-
-- type: entity
-  name: Deckard
-  parent: WeaponRevolverDeckardSecurity
-  id: WeaponRevolverDeckardNonLethalSecurity
+  id: WeaponRevolverDeckardNonLethal
   description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with .45 magnum rubber.
-               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -118,16 +110,8 @@
 - type: entity
   name: Inspector
   parent: WeaponRevolverInspector
-  id: WeaponRevolverInspectorSecurity
-  description: A detective's best friend. Uses .45 magnum ammo.
-               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-
-- type: entity
-  name: Inspector
-  parent: WeaponRevolverInspectorSecurity
-  id: WeaponRevolverInspectorNonLethalSecurity
+  id: WeaponRevolverInspectorNonLethal
   description: A detective's best friend. Comes loaded with .45 magnum rubber.
-               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -140,7 +124,7 @@
   name: Mateba
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
-  description: A distinctive revolver of an ancient Sol' design that was once seen as a rare collectible. It is in common manufacture by many companies in the Biesel Republic. Uses .45 magnum ammo.
+  description: The iconic sidearm of the dreaded death squads. Uses .45 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
@@ -155,7 +139,7 @@
   name: Python
   parent: BaseWeaponRevolver
   id: WeaponRevolverPython
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: A robust revolver favoured by Syndicate agents. Uses .45 magnum ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
@@ -175,35 +159,9 @@
 - type: entity
   name: Python
   parent: WeaponRevolverPython
-  id: WeaponRevolverPythonSecurity
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
-               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-
-- type: entity
-  name: Python
-  parent: WeaponRevolverPythonSecurity
-  id: WeaponRevolverPythonNonlethalSecurity
-  components:
-  - type: RevolverAmmoProvider
-    whitelist:
-      tags:
-        - CartridgeMagnum
-        - SpeedLoaderMagnum
-    proto: CartridgeMagnumRubber
-    capacity: 6
-    chambers: [ True, True, True, True, True, True ]
-    ammoSlots: [ null, null, null, null, null, null ]
-    soundEject:
-      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
-    soundInsert:
-      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
-
-- type: entity
-  name: Python
-  parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: A robust revolver favoured by Syndicate agents. Uses .45 magnum ammo.
   components:
   - type: RevolverAmmoProvider
     whitelist:

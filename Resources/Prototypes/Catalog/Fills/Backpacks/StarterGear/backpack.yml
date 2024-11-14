@@ -178,11 +178,21 @@
   noSpawn: true
   parent: ClothingBackpack
   id: ClothingBackpackChaplainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Bible
+      - id: RubberStampChaplain
 
 - type: entity
   noSpawn: true
   parent: ClothingBackpack
   id: ClothingBackpackMusicianFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: AcousticGuitarInstrument
+        - id: SaxophoneInstrument
 
 - type: entity
   noSpawn: true

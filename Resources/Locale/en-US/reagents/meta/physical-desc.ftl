@@ -1,5 +1,8 @@
 reagent-physical-desc-abrasive = abrasive
 reagent-physical-desc-acidic = acidic
+reagent-physical-desc-soapy = soapy
+reagent-physical-desc-ferrous = ferrous
+reagent-physical-desc-nothing = nothing
 reagent-physical-desc-acrid = acrid
 reagent-physical-desc-alkaline = alkaline
 reagent-physical-desc-aromatic = aromatic
@@ -83,6 +86,7 @@ reagent-physical-desc-spicy = spicy
 reagent-physical-desc-starchy = starchy
 reagent-physical-desc-starry = starry
 reagent-physical-desc-sticky = sticky
+reagent-physical-desc-strong-smelling = strong smelling
 reagent-physical-desc-strong-smelling = strong-smelling
 reagent-physical-desc-sugary = sugary
 reagent-physical-desc-sweet = sweet

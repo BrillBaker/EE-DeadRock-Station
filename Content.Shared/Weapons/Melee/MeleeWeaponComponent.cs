@@ -166,7 +166,10 @@ public sealed partial class MeleeWeaponComponent : Component
     {
         DoStaminaInteraction = true,
         StaminaDisadvantage = true,
+        StaminaRangeModifier = 2,
+        StaminaOffset = 0.25f,
         DoHealthInteraction = true,
+        HealthRangeModifier = 1.5f,
     };
 
     /// <summary>

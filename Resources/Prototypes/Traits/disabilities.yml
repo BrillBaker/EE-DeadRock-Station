@@ -8,10 +8,8 @@
       jobs:
         - Borg
         - MedicalBorg
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: PermanentBlindness
+  components:
+    - type: PermanentBlindness
 
 - type: trait
   id: Nearsighted
@@ -23,11 +21,9 @@
       jobs:
         - Borg
         - MedicalBorg
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: PermanentBlindness
-          blindness: 4
+  components:
+    - type: PermanentBlindness
+      blindness: 4
 
 - type: trait
   id: Narcolepsy
@@ -43,35 +39,29 @@
       inverted: true
       species:
         - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-      - type: Narcolepsy
-        timeBetweenIncidents: 300, 600
-        durationOfIncident: 10, 30
+  components:
+    - type: Narcolepsy
+      timeBetweenIncidents: 300, 600
+      durationOfIncident: 10, 30
 
 - type: trait
   id: Pacifist
   category: Mental
   points: 6
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Pacified
+  components:
+    - type: Pacified
 
 - type: trait
   id: Paracusia
   category: Auditory
   points: 2
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Paracusia
-          minTimeBetweenIncidents: 0.1
-          maxTimeBetweenIncidents: 300
-          maxSoundDistance: 7
-          sounds:
-            collection: Paracusia
+  components:
+    - type: Paracusia
+      minTimeBetweenIncidents: 0.1
+      maxTimeBetweenIncidents: 300
+      maxSoundDistance: 7
+      sounds:
+        collection: Paracusia
 
 - type: trait
   id: Muted
@@ -83,10 +73,8 @@
       jobs:
         - Borg
         - MedicalBorg
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Muted
+  components:
+    - type: Muted
 
 - type: trait
   id: Uncloneable
@@ -98,10 +86,8 @@
       jobs:
         - Borg
         - MedicalBorg
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Uncloneable
+  components:
+    - type: Uncloneable
 
 - type: trait
   id: FrontalLisp
@@ -118,10 +104,8 @@
         - IPC
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: FrontalLisp
+  components:
+    - type: FrontalLisp
 
 - type: trait
   id: Snoring
@@ -136,10 +120,8 @@
       inverted: true
       species:
         - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Snoring
+  components:
+    - type: Snoring
 
 - type: trait
   id: Sluggish
@@ -155,16 +137,14 @@
       inverted: true
       species:
         - Diona
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: TraitSpeedModifier
-          sprintModifier: 0.85
-          walkModifier: 0.85
-        - type: ClimbDelayModifier
-          climbDelayMultiplier: 1.35
-        - type: LayingDownModifier
-          layingDownCooldownMultiplier: 1.2
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.85
+      walkModifier: 0.85
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.35
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.2
 
 - type: trait
   id: SnailPaced
@@ -180,16 +160,14 @@
       inverted: true
       species:
         - Diona
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: TraitSpeedModifier
-          sprintModifier: 0.7
-          walkModifier: 0.7
-        - type: ClimbDelayModifier
-          climbDelayMultiplier: 1.66
-        - type: LayingDownModifier
-          layingDownCooldownMultiplier: 1.6
+  components:
+    - type: TraitSpeedModifier
+      sprintModifier: 0.7
+      walkModifier: 0.7
+    - type: ClimbDelayModifier
+      climbDelayMultiplier: 1.66
+    - type: LayingDownModifier
+      layingDownCooldownMultiplier: 1.6
 
 - type: trait
   id: BloodDeficiency
@@ -205,11 +183,9 @@
       inverted: true
       species:
         - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: BloodDeficiency # By default, start taking bloodloss damage at around ~21.4 minutes,
-          bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
+  components:
+    - type: BloodDeficiency              # by default, start taking bloodloss damage at around ~21.4 minutes,
+      bloodLossPercentage: 0.0002333333  # then become crit ~10 minutes
 
 - type: trait
   id: Hemophilia
@@ -225,14 +201,12 @@
       inverted: true
       species:
         - IPC
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Hemophilia
-          bleedReductionModifier: 0.5
-          damageModifiers:
-            coefficients:
-              Blunt: 1.1
+  components:
+    - type: Hemophilia
+      bleedReductionModifier: 0.5
+      damageModifiers:
+        coefficients:
+          Blunt: 1.1
 
 - type: trait
   id: Photophobia
@@ -243,14 +217,11 @@
       inverted: true
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
-        - Shadowkin
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Flashable
-          eyeDamageChance: 0.3
-          eyeDamage: 1
-          durationMultiplier: 1.5
+  components:
+    - type: Flashable
+      eyeDamageChance: 0.3
+      eyeDamage: 1
+      durationMultiplier: 1.5
 
 - type: trait
   id: Clumsy
@@ -266,13 +237,11 @@
       departments:
         - Command # Because I know for a fact people will play Captain and grief with their inability to fight back.
         - Security # Because I know for a fact people will play Security and grief with their inability to use guns.
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: Clumsy
-          clumsyDamage:
-            types:
-              Blunt: 5
-              Piercing: 4
-            groups:
-              Burn: 3
+  components:
+    - type: Clumsy
+      clumsyDamage:
+        types:
+          Blunt: 5
+          Piercing: 4
+        groups:
+          Burn: 3

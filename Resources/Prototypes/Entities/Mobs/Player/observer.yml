@@ -32,7 +32,6 @@
       - PsionicInvisibility
       - Ghost
       - Normal
-      - Ethereal
   - type: Input
     context: "ghost"
   - type: Examiner

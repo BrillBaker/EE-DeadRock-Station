@@ -6,7 +6,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Robust.Shared.Network;
 
 namespace Content.Shared.Customization.Systems;
 

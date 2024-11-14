@@ -42,10 +42,6 @@ character-item-group-LoadoutUniformsScience = Epistemics Uniforms
 # Epistemics - Cataloguer
 character-item-group-LoadoutCataloguerUniforms = Cataloguer Uniforms
 
-# Epistemics - Chaplain
-character-item-group-LoadoutChaplainUniforms = Chaplain Uniforms
-character-item-group-LoadoutChaplainEquipment = Chaplain Equipment
-
 # Medical
 character-item-group-LoadoutEyesMedical = Medical Eyewear
 character-item-group-LoadoutGlovesMedical = Medical Gloves

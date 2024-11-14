@@ -452,6 +452,11 @@ public sealed class NukeSystem : EntitySystem
         if (stationUid != null)
             _alertLevel.SetLevel(stationUid.Value, component.AlertLevelOnActivate, true, true, true, true);
 
+        var pos = nukeXform.MapPosition;
+        var x = (int) pos.X;
+        var y = (int) pos.Y;
+        var posText = $"({x}, {y})";
+
         // We are collapsing the randomness here, otherwise we would get separate random song picks for checking duration and when actually playing the song afterwards
         _selectedNukeSong = _audio.GetSound(component.ArmMusic);
 
@@ -462,7 +467,7 @@ public sealed class NukeSystem : EntitySystem
             Color.Red,
             stationUid ?? uid,
             null,
-            ("time", (int) component.RemainingTime), ("position", FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString((uid, nukeXform))))
+            ("time", (int) component.RemainingTime), ("position", posText)
         );
 
         _sound.PlayGlobalOnStation(uid, _audio.GetSound(component.ArmSound));

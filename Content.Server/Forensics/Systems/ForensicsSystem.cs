@@ -131,32 +131,53 @@ namespace Content.Server.Forensics
 
         private void OnAfterInteract(EntityUid uid, CleansForensicsComponent component, AfterInteractEvent args)
         {
-            if (args.Handled || !args.CanReach || !TryComp<ForensicsComponent>(args.Target, out var forensicsComp))
+            if (args.Handled || !args.CanReach)
                 return;
 
-            if ((forensicsComp.DNAs.Count <= 0 || !forensicsComp.CanDnaBeCleaned)
-                && forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count <= 0
-                && forensicsComp.Scent == string.Empty)
-                return; // Nothing to do if there is no DNAs, fibers, and scent
-
-            var cleanDelay = component.CleanDelay;
-            if (HasComp<ScentComponent>(args.Target))
-                cleanDelay += 30;
-
-            var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
+            if (TryComp<ForensicsComponent>(args.Target, out var forensicsComp)
+                && forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned
+                && forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count > 0
+                && forensicsComp.Scent != string.Empty)
             {
-                BreakOnHandChange = true,
-                NeedHand = true,
-                BreakOnDamage = true,
-                BreakOnTargetMove = true,
-                MovementThreshold = 0.01f,
-                DistanceThreshold = forensicsComp.CleanDistance,
-            };
+                var cleanDelay = component.CleanDelay;
+                if (HasComp<ScentComponent>(args.Target))
+                    cleanDelay += 30;
 
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
-            _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
+                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
+                {
+                    BreakOnHandChange = true,
+                    NeedHand = true,
+                    BreakOnDamage = true,
+                    BreakOnTargetMove = true,
+                    MovementThreshold = 0.01f,
+                    DistanceThreshold = forensicsComp.CleanDistance,
+                };
 
-            args.Handled = true;
+                _doAfterSystem.TryStartDoAfter(doAfterArgs);
+                _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
+
+                args.Handled = true;
+                return;
+            }
+
+            if (TryComp<ScentComponent>(args.Target, out var scentComp))
+            {
+                var cleanDelay = component.CleanDelay + 30;
+                var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cleanDelay, new CleanForensicsDoAfterEvent(), uid, target: args.Target, used: args.Used)
+                {
+                    BreakOnHandChange = true,
+                    NeedHand = true,
+                    BreakOnDamage = true,
+                    BreakOnTargetMove = true,
+                    MovementThreshold = 0.01f,
+                    DistanceThreshold = 1.5f,
+                };
+
+                _doAfterSystem.TryStartDoAfter(doAfterArgs);
+                _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning", ("target", args.Target)), args.User, args.User);
+
+                args.Handled = true;
+            }
         }
 
         private void OnCleanForensicsDoAfter(EntityUid uid, ForensicsComponent component, CleanForensicsDoAfterEvent args)
@@ -181,8 +202,7 @@ namespace Content.Server.Forensics
             if (TryComp<ResidueComponent>(args.Used, out var residue))
                 targetComp.Residues.Add(string.IsNullOrEmpty(residue.ResidueColor) ? Loc.GetString("forensic-residue", ("adjective", residue.ResidueAdjective)) : Loc.GetString("forensic-residue-colored", ("color", residue.ResidueColor), ("adjective", residue.ResidueAdjective)));
 
-            // If the ent has a Scent Component, we completely generate a new one and apply the new scent to all currently worn items.
-            // TODO this is never gonna work unless you like, wash yourself with the soap???
+            // If the ent has a Scent Component, we compleatly generate a new one and apply the new scent to all currently weared items.
             if (TryComp<ScentComponent>(args.Target, out var scentComp))
             {
                 var generatedscent = GenerateFingerprint(length: 5);

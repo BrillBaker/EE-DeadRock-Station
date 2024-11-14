@@ -15,7 +15,7 @@
           mapNameTemplate: '{0} NCS Gax {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'YG'
+            prefixCreator: '14'
         - type: StationJobs
           overflowJobs:
           - Passenger

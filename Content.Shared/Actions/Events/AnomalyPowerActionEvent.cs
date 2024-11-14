@@ -76,10 +76,6 @@ public partial record struct AnomalyPowerSettings()
 {
     public string PowerName;
 
-    public float ManaCost;
-
-    public bool CheckInsulation;
-
     /// <summary>
     ///     When casting above the Supercritical Threshold, if not 0, this will cause all powers to enter cooldown for the given duration.
     /// </summary>

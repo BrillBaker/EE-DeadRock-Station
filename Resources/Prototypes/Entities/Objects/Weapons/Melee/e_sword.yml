@@ -94,7 +94,7 @@
       colorOptions:
        - "#00CCFF"
     - type: StealTarget
-      stealGroup: HoSAntiqueWeapon
+      stealGroup: EnergySwordHoS
 
 - type: entity
   name: pen

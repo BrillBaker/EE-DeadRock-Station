@@ -3,6 +3,8 @@ using Content.Server.Chat.Systems;
 using Content.Server.Language;
 using Content.Server.Power.Components;
 using Content.Server.Radio.Components;
+using Content.Server.Speech;
+using Content.Server.VoiceMask;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Language;
@@ -90,13 +92,28 @@ public sealed class RadioSystem : EntitySystem
         if (!_messages.Add(message))
             return;
 
-        var evt = new TransformSpeakerSpeechEvent(messageSource, Name(messageSource));
-        RaiseLocalEvent(messageSource, evt);
-        var name = evt.VoiceName ?? Name(messageSource);
+        var name = TryComp(messageSource, out VoiceMaskComponent? mask) && mask.Enabled
+            ? mask.VoiceName
+            : MetaData(messageSource).EntityName;
+
+        // Delta-V: Support syrinx voice mask on radio.
+        if (TryComp(messageSource, out SyrinxVoiceMaskComponent? syrinx) && syrinx.Enabled)
+            name = syrinx.VoiceName;
 
         name = FormattedMessage.EscapeText(name);
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
+        SpeechVerbPrototype speech;
+        if (mask != null
+            && mask.Enabled
+            && mask.SpeechVerb != null
+            && _prototype.TryIndex<SpeechVerbPrototype>(mask.SpeechVerb, out var proto))
+        {
+            speech = proto;
+        }
+        else
+            speech = _chat.GetSpeechVerb(messageSource, message);
+
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
@@ -166,9 +183,6 @@ public sealed class RadioSystem : EntitySystem
         var languageColor = channel.Color;
         if (language.SpeechOverride.Color is { } colorOverride)
             languageColor = Color.InterpolateBetween(languageColor, colorOverride, colorOverride.A);
-        var languageDisplay = language.IsVisibleLanguage
-            ? $"{language.ChatName} | "
-            : "";
 
         return Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("color", channel.Color),
@@ -178,8 +192,7 @@ public sealed class RadioSystem : EntitySystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", message),
-            ("language", languageDisplay));
+            ("message", message));
     }
 
     /// <inheritdoc cref="TelecomServerComponent"/>

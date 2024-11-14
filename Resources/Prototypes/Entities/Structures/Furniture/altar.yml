@@ -25,14 +25,8 @@
         - TableLayer
   - type: Sprite
     snapCardinals: true
+  - type: Climbable
   - type: Clickable
-  - type: SacrificialAltar
-  - type: Strap
-    position: Down
-    rotation: -90
-  - type: GuideHelp
-    guides:
-    - AltarsGolemancy
 
 - type: entity
   id: AltarNanotrasen

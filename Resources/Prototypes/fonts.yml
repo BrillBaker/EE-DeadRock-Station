@@ -63,9 +63,5 @@
   path: /Fonts/Noganas.ttf
 
 - type: font
-  id: Lymphatic
-  path: /Fonts/Lymphatic.ttf
-
-- type: font
   id: Cambria
   path: /Fonts/Cambria.ttf

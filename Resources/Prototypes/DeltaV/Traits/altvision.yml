@@ -7,15 +7,12 @@
       species:
         - Vulpkanin
         - Harpy
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - DogVision
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: UltraVision
+  components:
+    - type: UltraVision
 
 - type: trait
   id: DogVision
@@ -26,12 +23,9 @@
       species:
         - Vulpkanin
         - Harpy
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - UltraVision
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: DogVision
+  components:
+    - type: DogVision

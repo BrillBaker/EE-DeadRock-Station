@@ -35,8 +35,6 @@
 
 - type: npcFaction
   id: SimpleHostile
-  friendly:
-  - AnimalFriend
   hostile:
   - NanoTrasen
   - Syndicate
@@ -88,8 +86,6 @@
 
 - type: npcFaction
   id: Pibble
-  friendly:
-  - AnimalFriend
   hostile:
   - Cat
   - Birb
@@ -103,6 +99,3 @@
 
 - type: npcFaction
   id: Birb
-
-- type: npcFaction
-  id: AnimalFriend

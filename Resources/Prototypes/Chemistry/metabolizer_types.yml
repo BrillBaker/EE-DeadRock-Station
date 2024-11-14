@@ -52,7 +52,3 @@
 - type: metabolizerType
   id: LiquorLifeline
   name: metabolizer-type-liquorlifeline
-
-- type: metabolizerType
-  id: Shadowkin
-  name: metabolizer-type-shadowkin

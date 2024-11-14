@@ -16,12 +16,6 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - Shadowkin
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
@@ -32,20 +26,19 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser
+    - type: BibleUser #Lets them heal with bibles
     - type: Psionic
       powerRollMultiplier: 3
     - type: InnatePsionicPowers
       powersToAdd:
         - TelepathyPower
         - HealingWordPower
-        - SummonRemiliaPower
 
 - type: startingGear
   id: ChaplainGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChaplain
-    back: ClothingBackpack
+    back: ClothingBackpackChaplainFilled
     shoes: ClothingShoesColorBlack
     id: ChaplainPDA
     ears: ClothingHeadsetScience

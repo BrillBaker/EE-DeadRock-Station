@@ -71,12 +71,10 @@
           Quantity: 1
   - type: UserInterface
     interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
   - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
+    key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
     entries:
     - prototype: Girder
@@ -285,12 +283,10 @@
         canReact: false
   - type: UserInterface
     interfaces:
-      enum.RadialSelectorUiKey.Key:
-        type: RadialSelectorMenuBUI
+      enum.ShortConstructionUiKey.Key:
+        type: ShortConstructionMenuBUI
   - type: ActivatableUI
-    key: enum.RadialSelectorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: false
+    key: enum.ShortConstructionUiKey.Key
   - type: ShortConstruction
     entries:
     - prototype: SecureWindoor

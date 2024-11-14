@@ -14,10 +14,6 @@
   - type: PhysicalComposition
     materialComposition:
       Bluespace: 100
-  - type: EmitSoundOnUse
-    sound:
-      collection: RadiationPulse
-  - type: EtherealStunItem
   - type: Tag
     tags:
     - BluespaceCrystal

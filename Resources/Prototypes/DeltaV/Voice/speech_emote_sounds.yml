@@ -60,10 +60,6 @@
       collection: VulpkaninHowls
     Weh:
       collection: Weh
-    Mars:
-      collection: Mars
-    Wurble:
-      collection: Wurble
 
 - type: emoteSounds
   id: MaleVulpkanin
